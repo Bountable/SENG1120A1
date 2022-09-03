@@ -39,9 +39,7 @@ public:
 
     void remove_from_current();//DONE
 
-    Node::value_type getFromTail() const;
-
-    Node::value_type getFromHead() const;
+  
 
 
     //Current Pointer Manipulation
@@ -53,9 +51,14 @@ public:
 
     void back(); // moves current one node to the left
 
-    Node::value_type get_current() const;
+    Node::value_type get_current() const; //DONE
 
-    int size();
+    Node::value_type getFromTail() const; //DONE
+
+    Node::value_type getFromHead() const; //DONE
+
+    int getSize();
+
 
 
 
@@ -67,6 +70,9 @@ private:
     Node*  current;
     int  size_;
 };
+
+ostream& operator << (ostream& out, LinkedList& Linkedlist);
+LinkedList& operator += (LinkedList& LinkedListOne, LinkedList& LinkedListTwo);
 
 
 #endif

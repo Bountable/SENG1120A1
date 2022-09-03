@@ -111,3 +111,56 @@ Node::value_type LinkedList::getFromTail() const{
 Node::value_type LinkedList::getFromHead() const{
 	return head->getData();
 }
+
+void LinkedList::start() // moves current to the head
+{
+	current = head;
+
+}
+void LinkedList::end() // moves current to the tail
+{
+	current = tail;
+
+}
+
+void LinkedList::forward() // moves current one node to the right
+{
+	current = current->getNext();
+}
+
+void LinkedList::back() // moves current one node to the left
+{
+	current = current->getPrev();
+}
+
+int LinkedList::getSize()
+{
+	return size_;
+}
+
+ostream& operator << (ostream& out, LinkedList& LinkedList)
+{
+    LinkedList.start(); // set list current to head
+    // arguments of the for list (create int "i" and set its value to 0 / complete until "i" equals or is greater then the value returned by getLength() / increase "i" by 1)
+    for(int i=0;i<LinkedList.getSize();i++) 
+    {
+        out << LinkedList.get_current(); // output the data of the current node
+        LinkedList.forward(); // move to the next node in the list
+    }
+    LinkedList.start();
+    return out;
+}
+
+LinkedList& operator += (LinkedList& LinkedListOne, LinkedList LinkedListTwo)
+{
+    LinkedListOne.start();
+    LinkedListTwo.start(); 
+    for(int i=0; i<LinkedListTwo.getSize(); i++)
+    {
+        LinkedListOne.add_to_tail(LinkedListTwo.get_current()); 
+        LinkedListTwo.forward(); 
+    }
+    LinkedListTwo.start();
+    LinkedListOne.start();
+    return LinkedListOne;
+}
