@@ -33,3 +33,14 @@ Node* Node::getNext() const{
 Node* Node::getPrev() const{
 	return	prev;
 }
+
+
+
+void Node::setData(const value_type &i){
+	data = i;
+} // sets data of the node
+
+
+Node::value_type Node::getData() const{
+	return data;
+} // gets data from node

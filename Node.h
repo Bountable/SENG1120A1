@@ -19,13 +19,13 @@ class Node
 		~Node();
 
 		// setters
-		void setPrev(Node* prev); // sets prev pointer
-		void setNext(Node* next); // sets next pointer
+		void setPrev(Node* prev); // sets prev pointer DONE
+		void setNext(Node* next); // sets next pointer DONE
 		void setData(const value_type& i); // sets data of the node
 
 		// getters
-		Node* getPrev() const; // gets prev pointer
-		Node* getNext() const; // gets next pointer
+		Node* getPrev() const; // gets prev pointer DONE
+		Node* getNext() const; // gets next pointer DONE
 		value_type getData() const; // gets data from node
 
 	// private member variables

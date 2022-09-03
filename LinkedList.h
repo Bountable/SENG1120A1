@@ -26,24 +26,22 @@ public:
     ~LinkedList(); //destructor
 
 
-    //Data In and
-    void add_to_head(const value_type& item);
+    //Data In and Data Out
+    void add_to_head(const value_type& item);//DONE
 
-    void add_to_tail(const value_type& item);
+    void add_to_tail(const value_type& item);//DONE
 
-    void add_current(const value_type& item);
+    void add_current(const value_type& item); //DONE
 
-    value_type& remove_from_head();
+    void remove_from_head(); //DONE
 
-    value_type& remove_from_tail();
+    void remove_from_tail(); 
 
-    value_type& remove_from_current();
+    void remove_from_current();//DONE
 
-    value_type& getFromCurrent();
+    Node::value_type getFromTail() const;
 
-    value_type& getFromTail();
-
-    value_type& getFromHead();
+    Node::value_type getFromHead() const;
 
 
     //Current Pointer Manipulation
@@ -55,7 +53,7 @@ public:
 
     void back(); // moves current one node to the left
 
-    value_type& get_current();
+    Node::value_type get_current() const;
 
     int size();
 
