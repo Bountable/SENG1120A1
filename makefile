@@ -1,7 +1,7 @@
 CC=g++
 CFLAGS=-c -Wall -std=c++98 
 LDFLAGS=
-SOURCES= node.cpp student-1.cpp main.cpp linkedList.cpp
+SOURCES= node.cpp student-1.cpp linkedList.cpp main.cpp
 OBJECTS=$(SOURCES:.cpp=.o)
 EXECUTABLE=a1
 
@@ -15,3 +15,5 @@ $(EXECUTABLE): $(OBJECTS)
 
 clean:
 	rm -rf *.o core
+
+

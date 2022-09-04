@@ -35,9 +35,11 @@ public:
 
     void remove_from_head(); //DONE
 
-    void remove_from_tail(); 
+    void remove_from_tail(); //DONE
 
     void remove_from_current();//DONE
+
+    void remove(const string name);
 
   
 
@@ -57,7 +59,11 @@ public:
 
     Node::value_type getFromHead() const; //DONE
 
-    int getSize();
+    int getSize(); //DONE
+
+    const double calcAverage();
+
+    const int Count(const string name);
 
 
 
@@ -71,8 +77,8 @@ private:
     int  size_;
 };
 
-ostream& operator << (ostream& out, LinkedList& Linkedlist);
-LinkedList& operator += (LinkedList& LinkedListOne, LinkedList& LinkedListTwo);
+ostream& operator << (ostream& out, LinkedList& Linkedlist);    //DONE
+LinkedList& operator += (LinkedList& LinkedListOne, LinkedList& LinkedListTwo); //DONE
 
 
 #endif

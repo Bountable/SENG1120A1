@@ -80,9 +80,19 @@ void LinkedList::remove_from_head(){
 	else{tail = NULL;}
 	delete temp;
 	size_ --;
-
-
 }
+
+
+void LinkedList::remove_from_tail()
+{
+    Node* tempNewNode = current->getPrev(); // set temp node pointer to prev of current
+    tempNewNode->setNext(NULL); // set next of temp node to NULL
+    delete current; // remove the current node
+    tail = tempNewNode; // set tail to the temp node
+    start(); // set current to head
+    size_--; // decrease length counter of the list by 1
+}
+
 
 void LinkedList::remove_from_current(){
 	current->getPrev()->setNext(current->getNext());
@@ -92,10 +102,37 @@ void LinkedList::remove_from_current(){
 	size_--;
 }
 
- void remove_from_tail(){
- 	//TODO
+void LinkedList::remove(const string name){
+	for(start(); current !=NULL; forward())
+	{
+		if(name == get_current().get_name())
+		{
+			if(current->getPrev()==NULL && current->getNext()==NULL)
+			{
+				delete current;
+				size_--;
 
- }
+			}
+			else if(current->getPrev()==NULL && current->getNext()!=NULL)
+			{
+				remove_from_head();
+			}
+			else if (current->getNext()==NULL && current->getPrev()!= NULL)
+			{
+				remove_from_tail();
+			}
+			else
+			{
+				remove_from_current();
+			}
+
+		}
+
+	}
+	
+}
+
+
 
 
 Node::value_type LinkedList::get_current() const{
@@ -138,6 +175,48 @@ int LinkedList::getSize()
 	return size_;
 }
 
+
+
+const double LinkedList::calcAverage(){
+
+ 	double average;
+    double total = 0;
+    int counter = 0;
+    for(start(); current!=NULL; forward())  // arguments of the for list (set current to head / complete until current == NULL / move up the list one node)
+    {   
+        total += get_current().get_score(); // add the score of the current node to total
+        counter++; // increase counter total by 1
+    }
+    average = (total/counter); // caluclate the average of the list using the count of the list and the total score of the entire list
+    return average;
+}
+
+
+
+const int LinkedList::Count(const string name){
+
+  	int counter = 0; // set counter to 0
+    for(start(); current!=NULL; forward()) // arguments of the for list (set current to head / complete until current == NULL / move up the list one node)
+    {   
+        // if the name of the current node matches the string inputted to the method increase the counter by 1
+        if(name==get_current().get_name())
+        {
+        	counter++;
+        }
+    }
+    return counter;
+
+}
+
+
+
+
+
+
+
+
+
+
 ostream& operator << (ostream& out, LinkedList& LinkedList)
 {
     LinkedList.start(); // set list current to head
@@ -151,7 +230,7 @@ ostream& operator << (ostream& out, LinkedList& LinkedList)
     return out;
 }
 
-LinkedList& operator += (LinkedList& LinkedListOne, LinkedList LinkedListTwo)
+LinkedList& operator += (LinkedList& LinkedListOne, LinkedList& LinkedListTwo)
 {
     LinkedListOne.start();
     LinkedListTwo.start(); 
