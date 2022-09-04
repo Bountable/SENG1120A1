@@ -1,10 +1,19 @@
-// This defines a class that represents an
-// account object for double numbers of a currency.
-// Programmer: Alex Mendes
-// Last modified:  14 Dec 2017
-// This file should be used in conjunction with Lab 1 for SENG1120
-#ifndef linkedlist_H
-#define linkedliSt_H
+// LinkedList.h
+// -----------------------------------------------
+// header for linkedlist.cpp
+// 
+// 
+// -----------------------------------------------
+// Written by SENG1120 Student: Darcy Studdert c3404758
+// 4-09-2022
+// Last update: 4/09/22 4:49pmm
+// -----------------------------------------------
+
+
+
+//macroguards
+#ifndef linkedlist_Darcy
+#define linkedlist_Darcy
 
 
 #include <string>
@@ -27,19 +36,19 @@ public:
 
 
     //Data In and Data Out
-    void add_to_head(const value_type& item);//DONE
+    void add_to_head(const value_type& item);//creates node with value item which is then slotted into the head of the LL
 
-    void add_to_tail(const value_type& item);//DONE
+    void add_to_tail(const value_type& item);//Creates a node with value item which is then slotted to the tail of the LL
 
-    void add_current(const value_type& item); //DONE
+    void add_current(const value_type& item); //Creates a Node with value item which is then slotted at wherever current is
 
-    void remove_from_head(); //DONE
+    void remove_from_head(); //deletes the node at the head
 
-    void remove_from_tail(); //DONE
+    void remove_from_tail(); //deletes the node at the tail
 
-    void remove_from_current();//DONE
+    void remove_from_current();//deletes node wherever the current is
 
-    void remove(const string name);
+    void remove(const string name); //will remove nodes with the string name matches
 
   
 
@@ -53,17 +62,17 @@ public:
 
     void back(); // moves current one node to the left
 
-    Node::value_type get_current() const; //DONE
+    Node::value_type get_current() const; //gets the node values from current position
 
-    Node::value_type getFromTail() const; //DONE
+    Node::value_type getFromTail() const; //gets the node values from the tail
 
-    Node::value_type getFromHead() const; //DONE
+    Node::value_type getFromHead() const; //gets the node values from the head
 
-    int getSize(); //DONE
+    int getSize(); //gets the size of the LL
 
-    const double calcAverage();
+    const double calcAverage(); //calculates the average of the LL
 
-    const int Count(const string name);
+    const int Count(const string name); //counts the the amount of matching names
 
 
 
@@ -77,8 +86,9 @@ private:
     int  size_;
 };
 
-ostream& operator << (ostream& out, LinkedList& Linkedlist);    //DONE
-LinkedList& operator += (LinkedList& LinkedListOne, LinkedList& LinkedListTwo); //DONE
+ostream& operator << (ostream& out, LinkedList& Linkedlist);    //overloades the << operator to return LL values
+LinkedList& operator += (LinkedList& LinkedListOne, LinkedList& LinkedListTwo); //overloades the += to concatonate 2 linkes lists
 
 
 #endif
+//macroguard

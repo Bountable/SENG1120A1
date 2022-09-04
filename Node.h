@@ -1,9 +1,18 @@
-#ifndef NODE_H
-#define NODE_H
-
+#ifndef NODE_DARCY
+#define NODE_DARCY
 #include <cstdlib>
 #include "Student.h"
 
+// Node.h
+// -----------------------------------------------
+// head for node.cpp
+// 
+// 
+// -----------------------------------------------
+// Written by SENG1120 Student: Darcy Studdert c3404758
+// 4-09-2022
+// Last update: 4/09/22 4:49pm
+// -----------------------------------------------
 
 using namespace std; 
 
@@ -20,13 +29,13 @@ class Node
 		~Node();
 
 		// setters
-		void setPrev(Node* prev); // sets prev pointer DONE
-		void setNext(Node* next); // sets next pointer DONE
+		void setPrev(Node* prev); // sets prev pointer 
+		void setNext(Node* next); // sets next pointer 
 		void setData(const value_type& i); // sets data of the node
 
 		// getters
-		Node* getPrev() const; // gets prev pointer DONE
-		Node* getNext() const; // gets next pointer DONE
+		Node* getPrev() const; // gets prev pointer 
+		Node* getNext() const; // gets next pointer 
 		value_type getData() const; // gets data from node
 
 	// private member variables
@@ -35,7 +44,7 @@ class Node
 		value_type data; // data of a node
 
 		// node pointers
-		Node* prev; // pointer to prev (or default: NULL)
-		Node* next; // pointer to next (or default: NULL)
+		Node* prev; // pointer to prev 
+		Node* next; // pointer to next 
 };
 #endif
