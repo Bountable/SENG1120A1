@@ -2,7 +2,7 @@
 #define NODE_H
 
 #include <cstdlib>
-#include "Student-1.h"
+#include "Student.h"
 
 
 using namespace std; 

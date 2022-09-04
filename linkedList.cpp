@@ -29,6 +29,18 @@ LinkedList::~LinkedList(){}
  		current = head;
  		size_++;
  	}
+ 	else
+	{
+		Node* newNode = new Node(item); // creates a new node
+	    newNode->setPrev(NULL); // sets prev pointer to NULL
+	    newNode->setNext(NULL); // sets next pointer to NULL
+	    tail = newNode; // sets tail of the list to the new node
+	    head = newNode; // sets head of the list to the new node
+	    current = head; // sets current of the list to the head of the list
+	    size_++; // increase the length count of the list by 1
+
+
+ 	}
 
 
  }
@@ -46,6 +58,16 @@ LinkedList::~LinkedList(){}
  		current = head;
  		size_++;
 
+ 	}
+ 	else
+ 	{
+ 		Node* newNode = new Node(item); // creates a new node
+	    newNode->setPrev(NULL); // sets prev pointer to NULL
+	    newNode->setNext(NULL); // sets next pointer to NULL
+	    tail = newNode; // sets tail of the list to the new node
+	    head = newNode; // sets head of the list to the new node
+	    current = head; // sets current of the list to the head of the list
+	    size_++; // increase the length count of the list by 1
  	}
 
 
@@ -67,6 +89,16 @@ void LinkedList::add_current(const value_type& item){
 		current = head;
 		size_++;
 
+	}
+	else
+	{
+		Node* newNode = new Node(item); // creates a new node
+	    newNode->setPrev(NULL); // sets prev pointer to NULL
+	    newNode->setNext(NULL); // sets next pointer to NULL
+	    tail = newNode; // sets tail of the list to the new node
+	    head = newNode; // sets head of the list to the new node
+	    current = head; // sets current of the list to the head of the list
+	    size_++; // increase the length count of the list by 1
 	}
 	
 }

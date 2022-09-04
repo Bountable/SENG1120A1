@@ -8,7 +8,7 @@
 // Last update: 2022-08-03
 // -----------------------------------------------
 
-#include "Student-1.h"
+#include "Student.h"
 #include <cstdlib>
 
 // Constructors

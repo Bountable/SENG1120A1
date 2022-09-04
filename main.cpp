@@ -15,7 +15,7 @@
 #include <iostream>
 #include <cstdlib>
 #include "Linkedlist.h"
-#include "Student-1.h"
+#include "Student.h" 
 using namespace std;
 
 void initialize(LinkedList &l1, LinkedList &l2)
@@ -31,7 +31,6 @@ void initialize(LinkedList &l1, LinkedList &l2)
     l1.add_to_tail(c);
 	c.set_name("Carol"); c.set_score(31);
     l1.add_to_tail(c);
-
     // and populate the second
 	c.set_name("Tony"); c.set_score(60);
     l2.add_to_head(c);
